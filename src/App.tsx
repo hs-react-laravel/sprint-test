@@ -8,13 +8,15 @@ import { Provider } from 'react-redux';
 import store from 'store'
 import Home from 'pages/Home';
 import './App.css';
+import Team from 'pages/Team';
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
+          <Route path="/" element={<Home />} />
+          <Route path="teams" element={<Team />} />
             {/* <Route index element={<Home />} /> */}
             {/* <Route index element={<Teams />} />
             <Route index element={<Members />} />
@@ -23,7 +25,6 @@ function App() {
               <Route path="new" element={<NewTodoForm />} />
               <Route index element={<LeagueStandings />} />
             </Route> */}
-          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>
