@@ -9,6 +9,7 @@ import store from 'store'
 import Home from 'pages/Home';
 import './App.css';
 import Team from 'pages/Team';
+import Member from 'pages/Member';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="teams" element={<Team />} />
+          <Route path="members" element={<Member />} />
             {/* <Route index element={<Home />} /> */}
             {/* <Route index element={<Teams />} />
             <Route index element={<Members />} />
