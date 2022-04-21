@@ -9,3 +9,13 @@ export const addJob = (job: TakeHome.JobData) => ({
   type: ACTION_TYPES.ADD_JOB,
   payload: { job }
 })
+
+export const editJob = (job: TakeHome.JobData) => ({
+  type: ACTION_TYPES.EDIT_JOB,
+  payload: { job }
+})
+
+export const deleteJob = (job: TakeHome.JobData) => ({
+  type: ACTION_TYPES.DELETE_JOB,
+  payload: { job }
+})

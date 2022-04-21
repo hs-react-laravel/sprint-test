@@ -5,7 +5,8 @@ declare namespace TakeHome {
   export interface DataState {
     teams: TeamData[]
     members: MemberData[]
-    jobs: JobData[]
+    jobs: JobData[],
+    maxJobID: number
   }
   export interface StoreState {
     ui: UIState

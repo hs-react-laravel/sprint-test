@@ -10,6 +10,8 @@ import Home from 'pages/Home';
 import './App.css';
 import Team from 'pages/Team';
 import Member from 'pages/Member';
+import JobList from 'pages/Job/List';
+import JobForm from 'pages/Job/Form';
 
 function App() {
   return (
@@ -19,14 +21,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="teams" element={<Team />} />
           <Route path="members" element={<Member />} />
-            {/* <Route index element={<Home />} /> */}
-            {/* <Route index element={<Teams />} />
-            <Route index element={<Members />} />
-            <Route path="todos" element={<Todos />}>
-              <Route path=":todoID" element={<Todo />} />
-              <Route path="new" element={<NewTodoForm />} />
-              <Route index element={<LeagueStandings />} />
-            </Route> */}
+          <Route path="todos" element={<JobList />} />
+          <Route path="todos/create" element={<JobForm mode='create' />} />
+          <Route path="todos/:id/edit" element={<JobForm mode='edit' />} />
         </Routes>
       </BrowserRouter>
     </Provider>
