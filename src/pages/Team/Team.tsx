@@ -9,12 +9,12 @@ const Team = ({
 }: Props) => {
   return (
     <PageTemplate title="Team">
-      <table>
+      <table className="table">
         <thead>
           <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Member Counts</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Member Counts</th>
           </tr>
         </thead>
         <tbody>

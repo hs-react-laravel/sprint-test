@@ -12,7 +12,9 @@ const PageTemplate = ({
   return (
     <div className="page-wrapper">
       <Header />
-      {children}
+      <div className="container">
+        {children}
+      </div>
     </div>
   )
 }

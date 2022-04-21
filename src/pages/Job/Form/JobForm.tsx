@@ -36,7 +36,7 @@ const JobForm = ({
       const orgJob = jobs.find(j => j.id === id)
       if (orgJob) setJob(orgJob)
     }
-  }, [params])
+  }, [params, jobs])
 
   const onSave = (ev: any) => {
     ev.preventDefault()
@@ -56,47 +56,51 @@ const JobForm = ({
 
   return (
     <PageTemplate title="To-do Form">
-      <form onSubmit={onSave}>
-        <div className="input-wrapper">
-          <label htmlFor="input-desc">Member</label>
-          <select
-            value={job.member}
-            onChange={ev => {
-              const selected = Number.parseInt(ev.target.value)
-              setJob(prev => ({ ...prev , member: isNaN(selected) ? undefined : selected}))
-            }}
-            required>
-            <option value="">Choose...</option>
-            {members.map(m => 
-              <option value={m.id} key={`option-member-${m.id}`}>
-                {m.first_name} {m.last_name}
-              </option>
-            )}
-          </select>
-        </div>
-        <div className="input-wrapper">
-          <label htmlFor="input-title">Title</label>
-          <input
-            id="input-title"
-            type="text"
-            className="form-input"
-            value={job.title}
-            onChange={ev => setJob(prev => ({ ...prev, title: ev.target.value }))}
-            required />
-        </div>
-        <div className="input-wrapper">
-          <label htmlFor="input-desc">Description</label>
-          <textarea
-            id="input-desc"
-            className="form-input"
-            value={job.description}
-            onChange={ev => setJob(prev => ({ ...prev, description: ev.target.value }))}
-            required />
-        </div>
-        <div className="button-wrapper">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      <div className="form-wrapper">
+        <form className="input-form" onSubmit={onSave}>
+          <div className="input-wrapper">
+            <label htmlFor="input-desc">Member</label>
+            <select
+              className="form-select"
+              value={job.member}
+              onChange={ev => {
+                const selected = Number.parseInt(ev.target.value)
+                setJob(prev => ({ ...prev , member: isNaN(selected) ? undefined : selected}))
+              }}
+              required>
+              <option value="">Choose...</option>
+              {members.map(m => 
+                <option value={m.id} key={`option-member-${m.id}`}>
+                  {m.first_name} {m.last_name}
+                </option>
+              )}
+            </select>
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="input-title">Title</label>
+            <input
+              id="input-title"
+              type="text"
+              className="form-input"
+              value={job.title}
+              onChange={ev => setJob(prev => ({ ...prev, title: ev.target.value }))}
+              required />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="input-desc">Description</label>
+            <textarea
+              id="input-desc"
+              className="form-input"
+              value={job.description}
+              onChange={ev => setJob(prev => ({ ...prev, description: ev.target.value }))}
+              required />
+          </div>
+          <div className="button-wrapper">
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+      
     </PageTemplate>
   )
 }

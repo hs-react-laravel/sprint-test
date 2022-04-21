@@ -1,14 +1,34 @@
 import { Link } from "react-router-dom"
 
-const Header = () => {
+interface Props {
+  currentMenu: string
+  setCurrentMenu: (menu: string) => void
+}
+
+const Header = ({
+  currentMenu,
+  setCurrentMenu
+}: Props) => {
   return (
-    <nav className="header-navbar">
-      <div className="navbar-container">
-        <Link to='/teams'>Teams</Link>
-        <Link to='/members'>Members</Link>
-        <Link to='/todos'>To-do</Link>
-      </div>
-    </nav>
+    <header className="header-navbar">
+      <ul className="navbar-container">
+        <li
+          className='nav-item'
+          onClick={() => setCurrentMenu('teams')}>
+          <Link className={currentMenu === 'teams' ? 'active' : ''} to='/teams'>Teams</Link>
+        </li>
+        <li
+          className='nav-item'
+          onClick={() => setCurrentMenu('members')}>
+          <Link className={currentMenu === 'members' ? 'active' : ''} to='/members'>Members</Link>
+        </li>
+        <li
+          className='nav-item'
+          onClick={() => setCurrentMenu('todos')}>
+          <Link className={currentMenu === 'todos' ? 'active' : ''} to='/todos'>To-do</Link>
+        </li>
+      </ul>
+    </header>
   )
 }
 

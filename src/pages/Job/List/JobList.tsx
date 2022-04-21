@@ -17,17 +17,17 @@ const JobList = ({
 
   return (
     <PageTemplate title="To-do">
-      <div>
-        <Link to={'/todos/create'}>Create a To-do</Link>
+      <div className="button-wrapper">
+        <Link className="btn btn-primary" to={'/todos/create'}>Create a To-do</Link>
       </div>
-      <table>
+      <table className="table">
         <thead>
           <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Description</td>
-            <td>Member</td>
-            <td></td>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Member</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -38,8 +38,8 @@ const JobList = ({
               <td>{job.description}</td>
               <td>{job.member}</td>
               <td>
-                <Link to={`/todos/${job.id}/edit`}>Edit</Link>
-                <button className="btn-danger" onClick={() => deleteItem(job)}>Delete</button>
+                <Link className="btn btn-primary fs-14" to={`/todos/${job.id}/edit`}>Edit</Link>
+                <button className="btn btn-danger fs-14" style={{ marginLeft: 10 }} onClick={() => deleteItem(job)}>Delete</button>
               </td>
             </tr>
           )}
