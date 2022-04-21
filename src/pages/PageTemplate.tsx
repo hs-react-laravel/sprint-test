@@ -1,7 +1,19 @@
+import Header from "components/Header";
 
-const PageTemplate = () => {
+interface Props {
+  title: string
+  children: React.ReactNode
+}
+
+const PageTemplate = ({
+  title,
+  children
+}: Props) => {
   return (
-    <div>Header</div>
+    <div className="page-wrapper">
+      <Header />
+      {children}
+    </div>
   )
 }
 

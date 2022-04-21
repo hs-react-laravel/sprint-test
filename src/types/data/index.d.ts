@@ -14,4 +14,10 @@ declare namespace TakeHome {
       name: string
     }
   }
+  export interface JobData {
+    id: number
+    member: number
+    title: string
+    description: string
+  }
 }

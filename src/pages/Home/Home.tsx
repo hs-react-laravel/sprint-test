@@ -1,6 +1,12 @@
+import PageTemplate from "pages/PageTemplate"
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <PageTemplate title="Home">
+      <div className="home-container">
+        Home
+      </div>
+    </PageTemplate>
   )
 }
 

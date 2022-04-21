@@ -1,4 +1,4 @@
-export const Teams = [
+export const teamsDummy = [
   {
     "id": 1,
     "name": "Project",
@@ -21,7 +21,7 @@ export const Teams = [
   }
 ]
 
-export const Members = [
+export const membersDummy = [
   {
     "id": 1801,
     "first_name": "Bonnie",

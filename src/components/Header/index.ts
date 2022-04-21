@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Home from './Home'
+import Header from './Header'
 
 const mapStateToProps = (state: TakeHome.StoreState) => ({
   
@@ -9,4 +9,4 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
